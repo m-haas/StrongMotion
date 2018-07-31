@@ -1,0 +1,82 @@
+VERSION: 0.3
+
+- - -
+
+ABOUT:
+
+dyna-convert.py is a small commandline utility that converts files downloaded from the ESM website to the most popular seismic formats.
+It converts to all output formats supported by the ObsPy toolbox, such as miniseed, sac, etc.
+
+dyna-convert.py conversion is kind of lazy, and very basic.
+Only the following header fields are written in output files: 
+
+- Sampling rate
+- Delta
+- Calibration factor
+- Number of sample points
+- Network code
+- Location code
+- Station code
+- Channel code
+- Date and time of the first data sample
+- Date and time of the last data sample
+
+if you need a more accurate conversion, you are free to hack dyna-convert.py to suit your needs. 
+
+- - -
+
+INSTALLATION:
+
+dyna-convert.py requires a working Python installation and the ObsPy toolbox.
+ObsPy requirements and installation instructions can be found at the following URL https://github.com/obspy/obspy/wiki
+
+
+- - -
+
+USAGE:
+
+dyna-convert.py is a commandline utility. Syntax is as follows
+
+dyna-convert.py /path/to/dyna-file /path/to/out-file FORMAT
+
+example usage #1 (MSEED output): 
+
+> ./dyna-convert.py /home/dyna/data/IT.LRG..HNE.D.19820321.094400.C.DIS.ASC out.mseed mseed
+
+example usage #2 (SAC output): 
+
+> ./dyna-convert.py /home/dyna/data/IT.LRG..HNE.D.19820321.094400.C.DIS.ASC out.sac sac
+
+- - -
+
+LICENSE:
+
+dyna-convert.py is released under the following BSD-style license:
+
+Copyright (c) 2014, INGV Milano-Pavia
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met: 
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer. 
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution. 
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+The views and conclusions contained in the software and documentation are those
+of the authors and should not be interpreted as representing official policies, 
+either expressed or implied, of the FreeBSD Project.
+
